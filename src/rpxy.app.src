@@ -1,0 +1,23 @@
+{application, rpxy,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  ranch,
+                  sasl
+                 ]},
+  {mod, { rpxy_app, []}},
+  {env, [
+        {port, 1883},
+        {endpoints, [
+            {{127,0,0,1}, 11883},
+            {{127,0,0,1}, 11884},
+            {{127,0,0,1}, 11885}
+            %% {{127,0,0,1}, 11886}
+
+        ]}
+    ]}
+ ]}.
